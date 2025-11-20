@@ -17,4 +17,4 @@ dependencies:
     path: ../sqfentity_gen # remove the first comment mark if you want to debug sqfentity_gen package on your local file system
   sqflite_common: 2.5.5
   sqflite_common_ffi: 2.3.5
-  meta: 1.16.0
+  meta: 1.17.0
