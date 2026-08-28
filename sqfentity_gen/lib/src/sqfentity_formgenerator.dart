@@ -37,9 +37,9 @@ class SqfEntityFormGenerator extends GeneratorForAnnotation<SqfEntityBuilder> {
     }
 
     final modelStr = StringBuffer();
-    final String path = element.source
-        .toString()
-        .substring(element.source.toString().lastIndexOf('/') + 1);
+    // analyzer >=13: Element nao expoe mais `source`; o basename do arquivo de
+    // entrada e o mesmo valor que se lia dali.
+    final String path = buildStep.inputId.pathSegments.last;
     if (dbModel.ignoreForFile != null && dbModel.ignoreForFile!.isNotEmpty) {
       modelStr
           .writeln('// ignore_for_file: ${dbModel.ignoreForFile!.join(', ')}');
